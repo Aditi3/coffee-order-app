@@ -27,6 +27,5 @@ class AddOrderViewController: UIViewController {
         segmentControl.insertSegment(withTitle: "Medium", at: 1, animated: false)
         segmentControl.insertSegment(withTitle: "Large", at: 2, animated: false)
         
-        self.segmentControl.tintColor = UIColor.red
     }
 }
