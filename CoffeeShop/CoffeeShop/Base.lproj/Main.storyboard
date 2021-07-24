@@ -86,20 +86,13 @@
                                     <outlet property="delegate" destination="cTk-ys-GTx" id="GvU-Wh-HD8"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cNH-YL-zT4">
-                                <rect key="frame" x="141.5" y="517" width="131" height="32"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-i9-4KO">
-                                <rect key="frame" x="32" y="592" width="350" height="34"/>
+                                <rect key="frame" x="32" y="598" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-5c-AfZ">
-                                <rect key="frame" x="32" y="648" width="350" height="34"/>
+                                <rect key="frame" x="32" y="654" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -108,17 +101,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7GQ-K8-eOR" firstAttribute="top" secondItem="gaV-yx-q21" secondAttribute="top" id="7Vj-dt-4v4"/>
-                            <constraint firstItem="0GI-i9-4KO" firstAttribute="top" secondItem="cNH-YL-zT4" secondAttribute="bottom" constant="44" id="Bit-0A-HA5"/>
+                            <constraint firstItem="gaV-yx-q21" firstAttribute="bottom" secondItem="XMq-5c-AfZ" secondAttribute="bottom" constant="120" id="9uf-ap-uYH"/>
                             <constraint firstItem="XMq-5c-AfZ" firstAttribute="top" secondItem="0GI-i9-4KO" secondAttribute="bottom" constant="22" id="CIp-An-32w"/>
                             <constraint firstItem="7GQ-K8-eOR" firstAttribute="height" secondItem="lVd-ga-Dyv" secondAttribute="height" multiplier="0.5" id="Fgu-AX-DGX"/>
-                            <constraint firstItem="cNH-YL-zT4" firstAttribute="top" secondItem="7GQ-K8-eOR" secondAttribute="bottom" constant="40" id="Ktu-wg-yrp"/>
                             <constraint firstItem="XMq-5c-AfZ" firstAttribute="trailing" secondItem="0GI-i9-4KO" secondAttribute="trailing" id="R5M-Cl-hzl"/>
                             <constraint firstItem="7GQ-K8-eOR" firstAttribute="width" secondItem="lVd-ga-Dyv" secondAttribute="width" id="Y1q-58-fKZ"/>
                             <constraint firstItem="gaV-yx-q21" firstAttribute="trailing" secondItem="0GI-i9-4KO" secondAttribute="trailing" constant="32" id="ZPQ-Jz-4pK"/>
                             <constraint firstItem="7GQ-K8-eOR" firstAttribute="leading" secondItem="gaV-yx-q21" secondAttribute="leading" id="Zf6-kE-Gox"/>
                             <constraint firstItem="0GI-i9-4KO" firstAttribute="leading" secondItem="gaV-yx-q21" secondAttribute="leading" constant="32" id="e2x-CT-vaR"/>
                             <constraint firstItem="XMq-5c-AfZ" firstAttribute="leading" secondItem="0GI-i9-4KO" secondAttribute="leading" id="irN-3v-Tjz"/>
-                            <constraint firstItem="cNH-YL-zT4" firstAttribute="centerX" secondItem="lVd-ga-Dyv" secondAttribute="centerX" id="yjK-G6-U5l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="yYU-Qd-oYA">
@@ -127,7 +118,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="coffeeListTableview" destination="7GQ-K8-eOR" id="gfZ-VJ-Iip"/>
-                        <outlet property="segmentControl" destination="cNH-YL-zT4" id="qWu-UJ-qOZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWl-5C-1sP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

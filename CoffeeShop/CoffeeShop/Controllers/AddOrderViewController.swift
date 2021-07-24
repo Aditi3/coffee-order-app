@@ -10,26 +10,30 @@ import UIKit
 
 class AddOrderViewController: UIViewController {
     
-    @IBOutlet var segmentControl: UISegmentedControl!
     @IBOutlet weak var coffeeListTableview: UITableView!
     private var viewModel = AddCoffeeOrderViewModel()
-    
+    private var coffeeSizesSegmentedControl: UISegmentedControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        setupUI()
     }
     
-    func setup() {
-        
-        // remove all current segments to make sure it is empty:
-        segmentControl.removeAllSegments()
-        
-        // adding your segments
-        segmentControl.insertSegment(withTitle: "Small", at: 0, animated: false)
-        segmentControl.insertSegment(withTitle: "Medium", at: 1, animated: false)
-        segmentControl.insertSegment(withTitle: "Large", at: 2, animated: false)
+   
+    private func setupUI() {
+        self.coffeeListTableview.tableFooterView = UIView()
+        setupSegmentedControl()
     }
     
+    private func setupSegmentedControl() {
+        self.coffeeSizesSegmentedControl = UISegmentedControl(items: self.viewModel.sizes)
+        
+        self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.coffeeSizesSegmentedControl)
+        
+        self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 20).isActive = true
+        self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+    }    
 }
 
 extension AddOrderViewController: UITextFieldDelegate {
