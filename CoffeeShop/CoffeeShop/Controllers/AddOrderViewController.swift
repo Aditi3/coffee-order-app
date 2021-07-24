@@ -33,7 +33,7 @@ class AddOrderViewController: UIViewController {
         
         self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 20).isActive = true
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-    }    
+    }
 }
 
 extension AddOrderViewController: UITextFieldDelegate {
@@ -41,7 +41,7 @@ extension AddOrderViewController: UITextFieldDelegate {
     
 }
 
-extension AddOrderViewController: UITableViewDataSource {
+extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -55,5 +55,13 @@ extension AddOrderViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CoffeeTypeTableViewCell", for: indexPath)
         cell.textLabel?.text = self.viewModel.types[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
