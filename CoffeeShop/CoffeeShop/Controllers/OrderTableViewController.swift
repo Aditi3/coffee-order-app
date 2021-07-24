@@ -18,11 +18,29 @@ class OrderTableViewController: UIViewController {
         self.performSegue(withIdentifier: "segue_goToAddOrder", sender: self)
     }
     
+    private func populateOrders() {
+        
+        guard let coffeeOrderUrl = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
+            fatalError("Url was incorrect")
+        }
+        
+        let resource = Resource<[Order]>(url: coffeeOrderUrl)
+        
+        WebService().load(resource: resource) { result in
+            
+            switch result {
+            case .success(let orders):
+                print(orders)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 
 extension OrderTableViewController: UITableViewDataSource {
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }

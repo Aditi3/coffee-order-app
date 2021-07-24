@@ -15,6 +15,7 @@
 		4941FF7F26A7EDB1005B1AB9 /* AddOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941FF7E26A7EDB1005B1AB9 /* AddOrderViewController.swift */; };
 		4941FF8226A80233005B1AB9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941FF8126A80233005B1AB9 /* WebService.swift */; };
 		4941FF8526A80622005B1AB9 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941FF8426A80622005B1AB9 /* Order.swift */; };
+		4941FF8826A91E91005B1AB9 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941FF8726A91E91005B1AB9 /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4941FF7E26A7EDB1005B1AB9 /* AddOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrderViewController.swift; sourceTree = "<group>"; };
 		4941FF8126A80233005B1AB9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		4941FF8426A80622005B1AB9 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		4941FF8726A91E91005B1AB9 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		4941FF6626A7EBB4005B1AB9 /* CoffeeShop */ = {
 			isa = PBXGroup;
 			children = (
+				4941FF8626A91E7E005B1AB9 /* View Models */,
 				4941FF8326A8059C005B1AB9 /* Models */,
 				4941FF8026A80222005B1AB9 /* Services */,
 				4941FF7B26A7EC66005B1AB9 /* Controllers */,
@@ -95,6 +98,14 @@
 				4941FF8426A80622005B1AB9 /* Order.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4941FF8626A91E7E005B1AB9 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				4941FF8726A91E91005B1AB9 /* OrderViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 				4941FF7D26A7ED6C005B1AB9 /* OrderTableViewController.swift in Sources */,
 				4941FF7F26A7EDB1005B1AB9 /* AddOrderViewController.swift in Sources */,
 				4941FF8526A80622005B1AB9 /* Order.swift in Sources */,
+				4941FF8826A91E91005B1AB9 /* OrderViewModel.swift in Sources */,
 				4941FF8226A80233005B1AB9 /* WebService.swift in Sources */,
 				4941FF6826A7EBB4005B1AB9 /* AppDelegate.swift in Sources */,
 			);
