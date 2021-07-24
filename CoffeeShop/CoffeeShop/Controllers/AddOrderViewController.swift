@@ -11,6 +11,7 @@ import UIKit
 class AddOrderViewController: UIViewController {
     
     @IBOutlet var segmentControl: UISegmentedControl!
+    @IBOutlet var coffeeListTableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,4 +29,18 @@ class AddOrderViewController: UIViewController {
         segmentControl.insertSegment(withTitle: "Large", at: 2, animated: false)
         
     }
+}
+
+
+extension AddOrderViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddOrderTableViewCell", for: indexPath)
+        return cell
+    }
+    
+    
 }
