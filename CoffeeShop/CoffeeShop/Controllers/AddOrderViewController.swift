@@ -10,16 +10,35 @@ import UIKit
 
 class AddOrderViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
     @IBOutlet weak var coffeeListTableview: UITableView!
     private var viewModel = AddCoffeeOrderViewModel()
     private var coffeeSizesSegmentedControl: UISegmentedControl!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
-   
+    @IBAction func save() {
+        
+        let name = self.nameTextField.text
+        let email = self.emailTextField.text
+        
+        let selectedSize = self.coffeeSizesSegmentedControl.titleForSegment(at: self.coffeeSizesSegmentedControl.selectedSegmentIndex)
+        
+        guard let indexPath = self.coffeeListTableview.indexPathForSelectedRow else {
+            fatalError("Error in selecting coffee!")
+        }
+        
+        self.viewModel.name = name
+        self.viewModel.email = email
+        self.viewModel.selectedSize = selectedSize
+        self.viewModel.selectedType = self.viewModel.types[indexPath.row]
+    }
+    
     private func setupUI() {
         self.coffeeListTableview.tableFooterView = UIView()
         setupSegmentedControl()
@@ -33,6 +52,7 @@ class AddOrderViewController: UIViewController {
         
         self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 20).isActive = true
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
     }
 }
 
@@ -42,7 +62,7 @@ extension AddOrderViewController: UITextFieldDelegate {
 }
 
 extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
-   
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
