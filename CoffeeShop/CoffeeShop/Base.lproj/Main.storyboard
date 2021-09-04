@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="59g-tZ-I2W">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -69,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7GQ-K8-eOR">
-                                <rect key="frame" x="0.0" y="56" width="414" height="421"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CoffeeTypeTableViewCell" id="uws-D3-gON">
@@ -103,7 +104,7 @@
                             <constraint firstItem="7GQ-K8-eOR" firstAttribute="top" secondItem="gaV-yx-q21" secondAttribute="top" id="7Vj-dt-4v4"/>
                             <constraint firstItem="gaV-yx-q21" firstAttribute="bottom" secondItem="XMq-5c-AfZ" secondAttribute="bottom" constant="120" id="9uf-ap-uYH"/>
                             <constraint firstItem="XMq-5c-AfZ" firstAttribute="top" secondItem="0GI-i9-4KO" secondAttribute="bottom" constant="22" id="CIp-An-32w"/>
-                            <constraint firstItem="7GQ-K8-eOR" firstAttribute="height" secondItem="lVd-ga-Dyv" secondAttribute="height" multiplier="0.5" id="Fgu-AX-DGX"/>
+                            <constraint firstItem="7GQ-K8-eOR" firstAttribute="height" secondItem="lVd-ga-Dyv" secondAttribute="height" multiplier="0.4" id="Fgu-AX-DGX"/>
                             <constraint firstItem="XMq-5c-AfZ" firstAttribute="trailing" secondItem="0GI-i9-4KO" secondAttribute="trailing" id="R5M-Cl-hzl"/>
                             <constraint firstItem="7GQ-K8-eOR" firstAttribute="width" secondItem="lVd-ga-Dyv" secondAttribute="width" id="Y1q-58-fKZ"/>
                             <constraint firstItem="gaV-yx-q21" firstAttribute="trailing" secondItem="0GI-i9-4KO" secondAttribute="trailing" constant="32" id="ZPQ-Jz-4pK"/>

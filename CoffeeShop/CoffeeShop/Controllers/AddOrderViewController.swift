@@ -46,8 +46,8 @@ class AddOrderViewController: UIViewController {
         
         self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(self.coffeeSizesSegmentedControl)
-        
-        self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 20).isActive = true
+                
+        self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 0).isActive = true
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
     }
