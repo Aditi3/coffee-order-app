@@ -15,6 +15,7 @@ class OrderTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateOrders()
     }
     
     @IBAction func addCoffeeButtonTapped(_ sender: UIBarButtonItem) {
@@ -23,13 +24,7 @@ class OrderTableViewController: UIViewController {
     
     private func populateOrders() {
         
-        guard let coffeeOrderUrl = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
-            fatalError("Url was incorrect")
-        }
-        
-        let resource = Resource<[Order]>(url: coffeeOrderUrl)
-        
-        WebService().load(resource: resource) {[weak self]result in
+        WebService().load(resource: Order.all) { [weak self] result in
             
             switch result {
             case .success(let orders):
