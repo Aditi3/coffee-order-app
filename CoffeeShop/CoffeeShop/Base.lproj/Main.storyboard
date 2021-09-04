@@ -86,12 +86,12 @@
                                     <outlet property="delegate" destination="cTk-ys-GTx" id="GvU-Wh-HD8"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-i9-4KO">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-i9-4KO">
                                 <rect key="frame" x="32" y="598" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-5c-AfZ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMq-5c-AfZ">
                                 <rect key="frame" x="32" y="654" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -114,10 +114,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Order" id="yYU-Qd-oYA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Jyn-ee-1Tq"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VcT-wS-NLK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VcT-wS-NLK">
+                            <connections>
+                                <action selector="save" destination="cTk-ys-GTx" id="sri-v1-Cyv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="coffeeListTableview" destination="7GQ-K8-eOR" id="gfZ-VJ-Iip"/>
+                        <outlet property="emailTextField" destination="XMq-5c-AfZ" id="2en-Ix-Um8"/>
+                        <outlet property="nameTextField" destination="0GI-i9-4KO" id="mnP-V1-mbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWl-5C-1sP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

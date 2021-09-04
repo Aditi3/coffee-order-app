@@ -14,12 +14,28 @@ class AddOrderViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var coffeeListTableview: UITableView!
-    private var viewModel = AddCoffeeOrderViewModel()
     private var coffeeSizesSegmentedControl: UISegmentedControl!
+    private var viewModel = AddCoffeeOrderViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    private func setupUI() {
+        self.coffeeListTableview.tableFooterView = UIView()
+        setupSegmentedControl()
+    }
+    
+    private func setupSegmentedControl() {
+        self.coffeeSizesSegmentedControl = UISegmentedControl(items: self.viewModel.sizes)
+        
+        self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.coffeeSizesSegmentedControl)
+        
+        self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 20).isActive = true
+        self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        
     }
     
     @IBAction func save() {
@@ -37,22 +53,15 @@ class AddOrderViewController: UIViewController {
         self.viewModel.email = email
         self.viewModel.selectedSize = selectedSize
         self.viewModel.selectedType = self.viewModel.types[indexPath.row]
-    }
-    
-    private func setupUI() {
-        self.coffeeListTableview.tableFooterView = UIView()
-        setupSegmentedControl()
-    }
-    
-    private func setupSegmentedControl() {
-        self.coffeeSizesSegmentedControl = UISegmentedControl(items: self.viewModel.sizes)
         
-        self.coffeeSizesSegmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(self.coffeeSizesSegmentedControl)
-        
-        self.coffeeSizesSegmentedControl.topAnchor.constraint(equalTo: self.coffeeListTableview.bottomAnchor, constant: 20).isActive = true
-        self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
+        WebService().load(resource: Order.create(vm: self.viewModel)) { result in
+            switch result {
+            case .success(let order):
+                print(order ?? "")
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 

@@ -25,7 +25,6 @@ class OrderTableViewController: UIViewController {
     private func populateOrders() {
         
         WebService().load(resource: Order.all) { [weak self] result in
-            
             switch result {
             case .success(let orders):
                 self?.orderListViewModel.ordersViewModel = orders.map(OrderViewModel.init)

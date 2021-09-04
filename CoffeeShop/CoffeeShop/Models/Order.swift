@@ -35,7 +35,6 @@ extension Order {
         guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
             fatalError("URL is incorrect!")
         }
-        
         return Resource<[Order]>(url: url)
     }()
     
@@ -54,7 +53,6 @@ extension Order {
         var resource = Resource<Order?>(url: url)
         resource.httpMethod = HttpMethod.post
         resource.body = data
-        
         return resource
     }
 }
