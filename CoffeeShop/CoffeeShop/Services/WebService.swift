@@ -14,7 +14,7 @@ enum NetworkError: Error {
 }
 
 enum HttpMethod: String {
-    case get = "GFT"
+    case get = "GET"
     case post = "POST"
 }
 
