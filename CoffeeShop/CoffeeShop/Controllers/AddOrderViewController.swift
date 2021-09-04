@@ -23,10 +23,18 @@ class AddOrderViewController: UIViewController {
     private var viewModel = AddCoffeeOrderViewModel()
     var delegate: AddCoffeeOrderDelegate?
     
+    
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.delegate = self
+        emailTextField.delegate = self
         setupUI()
     }
+    
+    
+    // MARK: - Set up UI
     
     private func setupUI() {
         self.coffeeListTableview.tableFooterView = UIView()
@@ -43,6 +51,9 @@ class AddOrderViewController: UIViewController {
         self.coffeeSizesSegmentedControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         
     }
+    
+    
+    // MARK: - Actions
     
     @IBAction func close() {
         if let delegate = self.delegate {
@@ -82,7 +93,9 @@ class AddOrderViewController: UIViewController {
 
 extension AddOrderViewController: UITextFieldDelegate {
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
 
 extension AddOrderViewController: UITableViewDataSource, UITableViewDelegate {
