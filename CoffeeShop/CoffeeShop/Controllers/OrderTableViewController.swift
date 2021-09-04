@@ -74,9 +74,11 @@ extension OrderTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath)
+      
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "OrderTableViewCell")
+
         let viewModel = self.orderListViewModel.orderViewModel(at: indexPath.row)
-        cell.textLabel?.text = viewModel.name
+        cell.textLabel?.text = viewModel.type
         cell.detailTextLabel?.text = viewModel.size
         return cell
     }
