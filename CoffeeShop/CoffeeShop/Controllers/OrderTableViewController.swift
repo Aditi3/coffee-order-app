@@ -13,22 +13,16 @@ class OrderTableViewController: UIViewController {
     var orderListViewModel = OrderListViewModel()
     @IBOutlet weak var ordersTableView: UITableView!
     
+    
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ordersTableView.tableFooterView = UIView()
         populateOrders()
     }
     
-    @IBAction func addCoffeeButtonTapped(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "segue_goToAddOrder", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navC = segue.destination as? UINavigationController, let addCoffeeOrderVC = navC.viewControllers.first as? AddOrderViewController else {
-            fatalError("Error performing segue!")
-        }
-        
-        addCoffeeOrderVC.delegate = self
-    }
+    // MARK: - Network Call
     
     private func populateOrders() {
         
@@ -41,6 +35,20 @@ class OrderTableViewController: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navC = segue.destination as? UINavigationController, let addCoffeeOrderVC = navC.viewControllers.first as? AddOrderViewController else {
+            fatalError("Error performing segue!")
+        }
+        
+        addCoffeeOrderVC.delegate = self
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func addCoffeeButtonTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "segue_goToAddOrder", sender: self)
     }
 }
 
