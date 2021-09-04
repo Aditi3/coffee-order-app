@@ -93,8 +93,8 @@
 				4941FF8026A80222005B1AB9 /* Services */,
 				4941FF7B26A7EC66005B1AB9 /* Controllers */,
 				4941FF6D26A7EBB4005B1AB9 /* Main.storyboard */,
-				4941FF7026A7EBB7005B1AB9 /* Assets.xcassets */,
 				4941FF7226A7EBB7005B1AB9 /* LaunchScreen.storyboard */,
+				4941FF7026A7EBB7005B1AB9 /* Assets.xcassets */,
 				4941FF7526A7EBB7005B1AB9 /* Info.plist */,
 			);
 			path = CoffeeShop;
